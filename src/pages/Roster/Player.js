@@ -45,6 +45,33 @@ export default class Player extends Component {
         console.log(player, "selected player");
       }
 
+      if(p.Position === "G"){
+        return (
+          <div>
+            <div>
+              <h1>{p.FirstName} {p.LastName}</h1>
+              <h2>DOB: {p.BirthDate}, Age: {p.Age}</h2>
+              <h2>Birth Place: {p.BirthCity}, {p.BirthCountry}</h2>
+              <h2>Height: {p.Height}, Weight: {p.Weight}</h2>
+            </div>
+            <br />
+            <div>
+              <h1>Current Team: {t.City} {t.Name}</h1>
+            </div>
+            <br />
+            <div>
+              <h1>2016 Stats</h1>
+              <h2>{s.GamesPlayed[text]} {s.GamesPlayed[abbr]}</h2>
+              <br />
+              <h2>Wins: {s.stats.Wins[text]}</h2>
+              <h2>Saves: {s.stats.Saves[text]}</h2>
+              <h2>Save %: {s.stats.SavePercentage[text]}</h2>
+              <h2>Shutouts: {s.stats.Shutouts[text]}</h2>
+            </div>
+          </div>
+        )
+      }
+
 
       return (
         <div>
@@ -86,7 +113,7 @@ export default class Player extends Component {
         <br />
         <br />
         <br />
-        
+
         <Link to="/roster">Back</Link>
       </div>
     );

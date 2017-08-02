@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import nhlShield from './img/nhlshield.png';
-import { Link } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 
 import Home from "./pages/Home";
+import Roster from "./pages/Roster";
 
 export default class App extends Component {
   render() {
@@ -15,7 +16,10 @@ export default class App extends Component {
           <h1><Link to="/roster">ROSTER</Link></h1>
         </div>
 
-        <Home />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/roster" component={Roster} />
+        </Switch>
 
       </div>
     );
