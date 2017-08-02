@@ -1,8 +1,8 @@
 
 
-const PlayerAPI =
+const PlayerAPI ={
 
-  [
+  players: [
         {
           "player": {
             "ID": "5263",
@@ -2906,5 +2906,5 @@ const PlayerAPI =
           }
         }
       ]
-        
+    }
 export default PlayerAPI
