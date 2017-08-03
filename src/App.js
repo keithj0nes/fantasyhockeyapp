@@ -5,6 +5,7 @@ import './App.css';
 
 import Home from "./pages/Home";
 import Roster from "./pages/Roster";
+import Teams from "./pages/Teams";
 
 export default class App extends Component {
   render() {
@@ -14,11 +15,14 @@ export default class App extends Component {
           <Link to="/"><img src={nhlShield} className="App-logo" alt="logo" /></Link>
           <h1><Link to="/">HOME</Link></h1>
           <h1><Link to="/roster">ROSTER</Link></h1>
+          <h1><Link to="/teams">TEAMS</Link></h1>
+
         </div>
 
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/roster" component={Roster} />
+          <Route path="/teams" component={Teams} />
         </Switch>
 
       </div>
