@@ -10,7 +10,7 @@ export default class Roster extends Component {
     return (
       <Switch>
         <Route exact path="/roster" component={FullRoster} />
-        <Route path="/roster/:index" component={Player} />
+        <Route path="/roster/:playerid" component={Player} />
       </Switch>
     );
   }

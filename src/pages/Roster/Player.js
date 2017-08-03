@@ -22,13 +22,11 @@ export default class Player extends Component {
   // }
 
   getPlayerByIndex(){
-    console.log("firing again haha");
-    console.log(this.props.match.params.index);
     let player = {};
 // console.log(PlayerAPI.players.length);
       for(var i = 0; i < PlayerAPI.players.length; i++){
         let currentPlayer = PlayerAPI.players[i];
-        if(currentPlayer === PlayerAPI.players[this.props.match.params.index]){
+        if(PlayerAPI.players[i].player.ID === this.props.match.params.playerid){
           player = currentPlayer
         }
       }
@@ -83,7 +81,7 @@ export default class Player extends Component {
           </div>
           <br />
           <div>
-            <h1>Current Team: {t.City} {t.Name}</h1>
+            <h1>Current Team:<Link to={`/teams/${t.ID}`}> {t.City} {t.Name}</Link></h1>
           </div>
           <br />
           <div>

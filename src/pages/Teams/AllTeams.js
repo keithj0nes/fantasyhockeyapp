@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-// import { Switch, Route } from 'react-router-dom';
-// import FullRoster from './Roster/FullRoster';
-// import Player from './Roster/Player';
 import PlayerAPI from '../../PlayerAPI';
 import { Link } from 'react-router-dom';
 
@@ -20,29 +17,19 @@ export default class AllTeams extends Component {
       return player.team;
     })
 
-    console.log(getTeam);
+    // console.log(getTeam);
 
-    for(var i = 0; i < getTeam.length; i++){
-      var currentTeam = getTeam[i];
+    // for(var i = 0; i < getTeam.length; i++){
+      // var currentTeam = getTeam[i];
       // console.log(currentTeam);
-      for(var j = 0; j < getTeam.length; j++){
-        var newCurrentTeam = getTeam[j];
-        console.log(newCurrentTeam);
+      // for(var j = 0; j < getTeam.length; j++){
+        // var newCurrentTeam = getTeam[j];
+        // console.log(newCurrentTeam);
 
-
-        // if(currentTeam === newCurrentTeam ){
-        //   console.log("these are matching");
-        //
-        // }
-        //
-        // if(i !== j){
-        //   console.log("indexs are not the same");
-        // }
-
-        console.log(currentTeam === newCurrentTeam && i !== j);
-      }
-      console.log("end---------------", i);
-    }
+        // console.log(currentTeam === newCurrentTeam && i !== j);
+      // }
+      // console.log("end---------------", i);
+    // }
     this.setState({teams: getTeam})
     // this.looper();
   }

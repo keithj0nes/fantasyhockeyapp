@@ -12,7 +12,6 @@ export default class FullRoster extends Component {
   }
 
   componentDidMount(){
-    console.log("firing");
     const players = PlayerAPI.players.map((player, index) => {
       // console.log(player);
       return player;
@@ -27,7 +26,7 @@ export default class FullRoster extends Component {
         <h1>FULL ROSTER</h1>
         <ul>
           {this.state.players.map((player, index) =>{
-            return <li key={index}><Link to={`/roster/${index}`}>{player.player.FirstName} {player.player.LastName}</Link> </li>
+            return <li key={index}><Link to={`/roster/${player.player.ID}`}>{player.player.FirstName} {player.player.LastName}</Link> </li>
           })}
         </ul>
 
