@@ -7,7 +7,8 @@ export default class AllTeams extends Component {
   constructor(){
     super();
     this.state = {
-      teams: []
+      teams: [],
+      search: ''
     }
   }
 
@@ -60,13 +61,26 @@ export default class AllTeams extends Component {
 // Vancouver Canucks
 // Boston Bruins
 
+updateSearch(e){
+  this.setState({search: e.target.value});
+}
+
 
   render() {
+    let filteredSearch = this.state.teams.filter((team)=>{
+      return team.Name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 || team.City.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+    })
+
     return (
       <div>
+        <input type="text" placeholder="Search Teams" onChange={this.updateSearch.bind(this)} />
+        <br />
+        <br />
+
         <h1>TEAMS</h1>
+        <br />
         <ul>
-          {this.state.teams.map((team, index) =>{
+          {filteredSearch.map((team, index) =>{
             return <li key={index}><Link to={`/teams/${team.ID}`}>{team.City} {team.Name}</Link> </li>
           })}
         </ul>

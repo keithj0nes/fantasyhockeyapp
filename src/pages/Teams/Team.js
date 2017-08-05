@@ -37,8 +37,6 @@ export default class AllTeams extends Component {
 
   render() {
     // console.log(this.props.match.params); // id:20
-
-    console.log(this.state);
     return (
       <div>
         <h1>{this.state.teamName}</h1>

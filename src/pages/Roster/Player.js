@@ -4,26 +4,8 @@ import { Link } from 'react-router-dom';
 
 export default class Player extends Component {
 
-  // constructor(){
-  //   super();
-  //   this.state = {
-  //     players: []
-  //   }
-  // }
-  //
-  // componentDidMount(){
-  //   console.log("firing");
-  //   const players = PlayerAPI.players.map((player, index) => {
-  //     // console.log(player);
-  //     return player;
-  //   })
-  //   this.setState({players: players})
-  //   // console.log(PlayerAPI.players.);
-  // }
-
   getPlayerByIndex(){
     let player = {};
-// console.log(PlayerAPI.players.length);
       for(var i = 0; i < PlayerAPI.players.length; i++){
         let currentPlayer = PlayerAPI.players[i];
         if(PlayerAPI.players[i].player.ID === this.props.match.params.playerid){
@@ -54,7 +36,7 @@ export default class Player extends Component {
             </div>
             <br />
             <div>
-              <h1>Current Team: {t.City} {t.Name}</h1>
+              <h1>Current Team: <Link to={`/teams/${t.ID}`}>{t.City} {t.Name}</Link></h1>
             </div>
             <br />
             <div>

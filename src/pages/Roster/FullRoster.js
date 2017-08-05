@@ -7,7 +7,8 @@ export default class FullRoster extends Component {
   constructor(){
     super();
     this.state = {
-      players: []
+      players: [],
+      search: ''
     }
   }
 
@@ -20,12 +21,30 @@ export default class FullRoster extends Component {
     // console.log(PlayerAPI.players.);
   }
 
+  updateSearch(e){
+    // console.log(e.target.value);
+    this.setState({search: e.target.value})
+    setTimeout(()=>{
+      // console.log(this.state.search);
+    },10)
+  }
+
   render() {
+    let filteredSearch = this.state.players.filter((player)=>{
+      return player.player.FirstName.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 || player.player.LastName.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+    });
+
     return (
       <div>
+        <input type="text" placeholder="Search players" onChange={this.updateSearch.bind(this)}/>
+        <br />
+        <br />
+
         <h1>FULL ROSTER</h1>
+
+        <br />
         <ul>
-          {this.state.players.map((player, index) =>{
+          {filteredSearch.map((player, index) =>{
             return <li key={index}><Link to={`/roster/${player.player.ID}`}>{player.player.FirstName} {player.player.LastName}</Link> </li>
           })}
         </ul>
